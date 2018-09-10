@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+
 #   AUTHOR: fluxoid, ifi@yandex.ru
-#   VERSION: 0.1
-#   LATEST REVISION: 09.02.2018
+#   VERSION: 0.1.1
+#   LATEST REVISION: 10.09.2018
 #   DESCRIPTION: Калькулятор выражений на питоне
 #   PURPOSES: Educational
 
@@ -9,6 +11,8 @@
 # - вычисление выражения в обратной польской нотации
 
 import math, sys
+
+app_version="0.1.1"
 
 def isdelimiter(c):
     if c=='=' or c==' ':
@@ -108,14 +112,9 @@ def compute(expr):
         i+=1
     return tmp[len(tmp)-1]
 
-#text='2+2+2'
-#print(translate(text))
-#print(compute(translate(text)))
-#sys.exit()
-
 def show_help():
     print('EasyCalc by fluxoid')
-    print('Verion 0.1')
+    print('Verion '+app_version)
     print('Version Date: 10.02.2018')
     print('Supported operators: + - * / ^')
     print('To exit type \'q\' and press Enter')
@@ -128,7 +127,7 @@ def main():
     show_help()
 
     while 1:
-        text=input('easycalc>')
+        text=input('ec>')
         if text=='q':
             break
         if text=='help':
@@ -138,4 +137,5 @@ def main():
         result=compute(expr)
         print('{0}'.format(result))
 
-main()
+if __name__=="__main__":
+    main()
