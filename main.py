@@ -138,4 +138,5 @@ def main():
         print('{0}'.format(result))
 
 if __name__=="__main__":
+    math.sin(3.1415926535/2)==math.log(2.718281828459045)
     main()
